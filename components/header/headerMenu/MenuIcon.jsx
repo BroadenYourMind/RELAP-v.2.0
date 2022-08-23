@@ -1,11 +1,13 @@
 import React, {useState} from "react";
 import styled from 'styled-components';
+
+import { device } from "@/common/constants/device";
 import MenuBody from "./MenuBody";
 
 const StyledMenuIcon = styled.div`
 display: none;
 
-@media ${props => props.theme.media.tablet} {
+@media ${device.tablet} {
     justify-content: end;
 
     padding-right: 10px;

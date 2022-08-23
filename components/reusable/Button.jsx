@@ -1,4 +1,3 @@
-import React from "react";
 import styled, { css } from 'styled-components';
 
 const StyledButton = styled.a`
@@ -18,13 +17,13 @@ color: ${props => props.color || props.theme.colors.secondary}
     transition: all 0.5s ease;
 }
 
-${props => props.color_yellow && css`
+${props => props.colorYellow && css`
 background: #FFC300;`}
 
-${props => props.color_purple && css`
+${props => props.colorPurple && css`
 background: #C86DD7;`}
 
-${props => props.color_transparent && css`
+${props => props.colorTransparent && css`
 border: 1px solid rgba(255, 255, 255, 0.295063);
 
 @media ${props => props.theme.media.tablet} {
@@ -32,12 +31,4 @@ border: 1px solid rgba(255, 255, 255, 0.295063);
 }`}
 `
 
-
-function Button(props) {
-    return (
-        <StyledButton href="" {...props}>
-        </StyledButton>
-    );
-}
-
-export default Button;
+export default StyledButton;

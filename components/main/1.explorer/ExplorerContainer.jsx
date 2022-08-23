@@ -1,9 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
+
 import containerStyles from "../../Container.jsx";
 import ExploreContent from './ExploreContent.jsx';
 import ExploreImage from './ExploreImage.jsx';
 import ExploreSocial from './ExploreSocial.jsx';
+
+import { device } from "@/common/constants/device";
 
 const StyledExplorerContainer = styled.div`
 ${containerStyles}
@@ -23,12 +26,12 @@ max-height: 768px;
     }
 `
 
-const ExplorerContainer = (props) => {
+const ExplorerContainer = () => {
     return (
-        <StyledExplorerContainer {...props}>
-            <ExploreContent></ExploreContent>
-            <ExploreImage></ExploreImage>
-            <ExploreSocial></ExploreSocial>
+        <StyledExplorerContainer>
+            <ExploreContent/>
+            <ExploreImage/>
+            <ExploreSocial/>
         </StyledExplorerContainer>
     )
 }

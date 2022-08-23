@@ -76,7 +76,7 @@ div {
 const ExploreImage = () => {
     return (
         <StyledExploreImage>
-            <img src="img/explore/illustration.svg" alt="Стол с ноутбуком"></img>
+            <img src="img/explore/illustration.svg" alt="Стол с ноутбуком" />
             <div></div>
             <div></div>
             <div></div>

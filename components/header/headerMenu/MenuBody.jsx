@@ -1,6 +1,8 @@
 import React from "react";
 import styled from 'styled-components';
 
+import { device } from "@/common/constants/device";
+
 const StyledMenuBody = styled.ul`
 display: flex;
 flex: 0 0 414px;
@@ -8,15 +10,7 @@ margin: 0 0 7px 50px;
 justify-content: space-between;
 line-height: 1;
 
-a {
-    font-weight: 600;
-
-    &:hover {
-        text-decoration: underline;
-    }
-}
-
-@media ${props => props.theme.media.tablet} {
+@media ${device.tablet} {
     position: fixed;
     display: flex;
     flex-direction: column;
@@ -45,23 +39,30 @@ a {
         background: #FFFFFF;
         z-index: 2;
     }
-
-    li {
-        margin-bottom: 30px;
-    }
 }
 `
 
+const Link = styled.a`
+font-weight: 600;
+
+&:hover {
+    text-decoration: underline;
+}
+`
+
+const ListItem = styled.li`
+@media ${device.tablet} {
+    margin-bottom: 30px;
+}
+`
 
 function MenuBody(props) {
-
-
     return (
         <StyledMenuBody {...props}>
             {props.items.map(item => 
-                <li>
-                    <a href={item.href}>{item.value}</a>
-                </li>)}
+                <ListItem>
+                    <Link href={item.href}>{item.value}</Link>
+                </ListItem>)}
         </StyledMenuBody>
     );
 }

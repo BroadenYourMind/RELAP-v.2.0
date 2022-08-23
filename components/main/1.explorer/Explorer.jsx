@@ -11,8 +11,7 @@ overflow: hidden;
 const Explorer = () => {
     return (
         <StyledExplorer>
-            <ExplorerContainer>
-            </ExplorerContainer>
+            <ExplorerContainer/>
         </StyledExplorer>
     )
 }

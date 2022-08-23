@@ -1,6 +1,8 @@
 import React from "react";
 import styled from 'styled-components';
-import MenuIcon from './headerMenu/MenuIcon'
+
+import { device } from "@/common/constants/device";
+import MenuIcon from "./headerMenu/MenuIcon";
 
 const StyledHeaderMenu = styled.div`
 display: flex;
@@ -8,7 +10,7 @@ justify-content: center;
 flex: 1 1 auto; 
 margin-bottom: 5px;
 
-@media ${props => props.theme.media.tablet} {
+@media ${device.tablet} {
     justify-content: end;
 }
 `
@@ -17,7 +19,7 @@ margin-bottom: 5px;
 function HeaderMenu(props) {
     return (
         <StyledHeaderMenu {...props}>
-            <MenuIcon></MenuIcon>
+            <MenuIcon/>
         </StyledHeaderMenu>
     );
 }

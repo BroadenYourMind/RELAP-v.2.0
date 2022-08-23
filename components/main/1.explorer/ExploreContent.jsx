@@ -1,6 +1,6 @@
 import React from 'react'
-import Button from '../../Button'
 import styled from 'styled-components'
+import StyledButton from '../../Button'
 
 const StyledExploreContent = styled.div`
 padding: 85px 0 192px 0;
@@ -40,7 +40,7 @@ const ExploreContent = (props) => {
                 necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non
                 recusandae.
             </p>
-            <Button color_yellow>Explore</Button>
+            <StyledButton colorYellow>Explore</StyledButton>
         </StyledExploreContent>
     )
 }
