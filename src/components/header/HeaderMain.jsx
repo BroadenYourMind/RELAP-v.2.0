@@ -3,33 +3,31 @@ import styled from 'styled-components';
 
 import HeaderLogo from "./HeaderLogo";
 import HeaderMenu from "./HeaderMenu";
-import containerStyles from "../reusable/Container";
+import Container from "../reusable/Container";
 import StyledButton from "../reusable/Button";
 
 import { device } from "../../common/constants/device";
 
 const StyledHeader = styled.header`
-position: absolute;
-width: 100%;
-top: 0;
-left: 0;
-z-index: 50;
-color: var(--white);
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    color: var(--white);
 `
 
-const StyledHeaderContainer = styled.div`
-${containerStyles}
-display: flex;
-height: 78px;
-align-items: flex-end;
+const StyledHeaderContainer = styled(Container)`
+    display: flex;
+    padding-top: 30px;
+    align-items: flex-end;
 
-
-@media ${device.tablet} {
-    background: #FFFFFF;
-    box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.0984488);
-    height: 64px;
-    align-items: center;
-}
+    @media ${device.tablet} {
+        background: #FFFFFF;
+        box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.0984488);
+        padding: 8px 15px;
+        align-items: center;
+    }
 `
 
 
@@ -38,7 +36,7 @@ function HeaderMain(props) {
         <StyledHeader {...props}>
             <StyledHeaderContainer>
                 <HeaderLogo>RELAP</HeaderLogo>
-                <HeaderMenu/>
+                <HeaderMenu />
                 <StyledButton colorTransparent>Contact Us</StyledButton>
             </StyledHeaderContainer>
         </StyledHeader>

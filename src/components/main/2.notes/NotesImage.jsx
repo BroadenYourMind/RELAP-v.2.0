@@ -53,60 +53,60 @@ left: 648px;
 `
 
 const Image = styled.img`
-&:nth-child(1) {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 1;
-    border-radius: 3px;
-}
-
-&:nth-child(2) {
-    position: absolute;
-    width: 32.2%;
-    height: 28.3%;
-    object-fit: cover;
-    top: 41%;
-    left: -15.8%;
-    z-index: 1;
-
-    @media ${device.tablet} {
+    &:nth-child(1) {
         position: absolute;
-        width: 24.2%;;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+        border-radius: 3px;
+    }
+
+    &:nth-child(2) {
+        position: absolute;
+        width: 32.2%;
         height: 28.3%;
         object-fit: cover;
         top: 41%;
-        left: 40%;
+        left: -15.8%;
         z-index: 1;
-    }
-}
 
-&:nth-child(3) {
-    position: absolute;
-    width: 3.8%;
-    height: 4.8%;
-    object-fit: cover;
-    top: 50%;
-    left: -3%;
-    z-index: 1;
-    
-    @media ${device.tablet} {
+        @media ${device.tablet} {
+            position: absolute;
+            width: 24.2%;;
+            height: 28.3%;
+            object-fit: cover;
+            top: 41%;
+            left: 40%;
+            z-index: 1;
+        }
+    }
+
+    &:nth-child(3) {
         position: absolute;
-        width: 2.8%;
+        width: 3.8%;
         height: 4.8%;
         object-fit: cover;
         top: 50%;
-        left: 49.5%;
+        left: -3%;
         z-index: 1;
+        
+        @media ${device.tablet} {
+            position: absolute;
+            width: 2.8%;
+            height: 4.8%;
+            object-fit: cover;
+            top: 50%;
+            left: 49.5%;
+            z-index: 1;
+        }
+        
+        @media ${device.mobile} {
+            width: 3.4%;
+            height: 3.8%;
+            top: 51%;
+        }
     }
-    
-    @media ${device.mobile} {
-        width: 3.4%;
-        height: 3.8%;
-        top: 51%;
-    }
-}
 `
 
 const NotesImage = () => {

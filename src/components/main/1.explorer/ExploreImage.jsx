@@ -4,39 +4,40 @@ import styled from 'styled-components'
 import { device } from "../../../common/constants/device";
 
 const StyledExploreImage = styled.div`
-position: relative;
-flex: 0 1 auto;
+    position: relative;
+    flex: 0 1 auto;
 
-@media ${device.tablet} {
-    max-height: 560px;
-    flex: 1 1 auto;
-}
+    @media ${device.tablet} {
+        max-height: 560px;
+        flex: 1 1 auto;
+    }
 
-@media ${device.mobile} {
-    display: flex;
-    width: 100%;
-    justify-content: start;
-}
+    @media ${device.mobile} {
+        display: flex;
+        width: 100%;
+        justify-content: start;
+    }
 `
 
 const Image = styled.img`
-position: relative;
-z-index: 2;
+    position: relative;
+    z-index: 2;
 
-@media ${device.tablet} {
-    width: 100%;
-    min-width: 500px;
-}
+    @media ${device.tablet} {
+        width: 100%;
+        min-width: 500px;
+    }
 
-@media ${device.mobile} {
-    min-width: 135%;
-}
+    @media ${device.mobile} {
+        min-width: 135%;
+    }
 `
+
 const Decor = styled.div`
-position: absolute;
-content: "";
-background: var(--purple);
-border-radius: 50%;
+    position: absolute;
+    content: "";
+    background: var(--purple);
+    border-radius: 50%;
 
     &:nth-child(1) {
         bottom: -53px;
@@ -78,10 +79,10 @@ const ExploreImage = () => {
     return (
         <StyledExploreImage>
             <Image src="img/explore/illustration.svg" alt="Стол с ноутбуком" />
-            <Decor></Decor>
-            <Decor></Decor>
-            <Decor></Decor>
-            <Decor></Decor>
+            <Decor />
+            <Decor />
+            <Decor />
+            <Decor />
         </StyledExploreImage>
     )
 }

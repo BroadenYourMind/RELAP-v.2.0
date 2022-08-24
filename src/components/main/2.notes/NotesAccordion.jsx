@@ -4,46 +4,43 @@ import styled from 'styled-components'
 import { device } from "../../../common/constants/device";
 
 const StyledNotesAccordion = styled.div`
-&:not(:last-child) {
-    margin-bottom: ${({open}) => open ? '40px' : '0'};
-}
+    &:not(:last-child) {
+        margin-bottom: ${({ isActive }) => isActive ? '40px' : '0'};
+    }
 `
 
 const Button = styled.button`
-padding-bottom: ${({open}) => open ? '10px' : '26px'};
-text-decoration: ${({open}) => open ? 'underline' : 'none'};
+    padding-bottom: ${({ isActive }) => isActive ? '10px' : '26px'};
+    text-decoration: ${({ isActive }) => isActive ? 'underline' : 'none'};
 
-&:after {
-    content: ${({open}) => open ? 'url(../img/notes/arr-up.svg)' : 'url(../img/notes/arr-down.svg)'};
-    padding-left: 8px;
-}
+    &:after {
+        content: ${({ isActive }) => isActive ? 'url(../img/notes/arr-up.svg)' : 'url(../img/notes/arr-down.svg)'};
+        padding-left: 8px;
+    }
 
-&:hover {
-    text-decoration: underline;
-}
+    &:hover {
+        text-decoration: underline;
+    }
 `
 
 const Discription = styled.p`
-display: ${({open}) => open ? 'block' : 'none'};
-font-weight: 400;
-mix-blend-mode: normal;
-opacity: 0.5;
-overflow: auto;
+    display: ${({ isActive }) => isActive ? 'block' : 'none'};
+    font-weight: 400;
+    mix-blend-mode: normal;
+    opacity: 0.5;
+    overflow: auto;
 
-@media ${device.tablet} {
-    max-width: 100%;
-}
+    @media ${device.tablet} {
+        max-width: 100%;
+    }
 `
 
-
-const NotesAccordion = ({items, active, setActive}) => {
+const NotesAccordion = ({ items, isActive, setIsActive }) => {
     return (
-        <>{items.map(item => 
-            <StyledNotesAccordion open={active === item.value ? true : false}>
-                <Button open={active === item.value ? true : false} onClick={() => active ===  item.value ? setActive("") : setActive(item.value)}>{item.value}</Button>
-                <div>
-                <Discription open={active === item.value ? true : false}>{item.text}</Discription>
-                </div>
+        <>{items.map(item =>
+            <StyledNotesAccordion isActive={isActive === item.value}>
+                <Button isActive={isActive === item.value} onClick={() => [isActive === item.value ? setIsActive("") : setIsActive(item.value), console.log("Вперёд!")]}>{item.value}</Button>
+                <Discription isActive={isActive === item.value}>{item.text}</Discription>
             </StyledNotesAccordion>)}</>
     )
 }
