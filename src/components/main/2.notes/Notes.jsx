@@ -1,39 +1,39 @@
-import React from 'react'
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 import Container from "../../reusable/Container";
-import NotesContent from './NotesContent.jsx';
+import NotesContent from "./NotesContent.jsx";
 
 import { device } from "../../../common/constants/device";
 
 const StyledNotes = styled.section`
-    background: #F2F2F2; 
-`
+  background: #f2f2f2;
+`;
 
 const StyledNotesContainer = styled(Container)`
-    min-height: 768px;
-    position: relative;
+  min-height: 768px;
+  position: relative;
 
-    @media ${device.laptop} {
-        display: flex;
-        justify-content: space-between;
-        flex: 0 1 50%;
-    }
+  @media ${device.laptop} {
+    display: flex;
+    justify-content: space-between;
+    flex: 0 1 50%;
+  }
 
-    @media ${device.tablet} {
-        max-height: none;
-        flex-wrap: wrap;
-    }
-`
+  @media ${device.tablet} {
+    max-height: none;
+    flex-wrap: wrap;
+  }
+`;
 
 const Notes = () => {
-    return (
-        <StyledNotes>
-            <StyledNotesContainer>
-                <NotesContent/>
-            </StyledNotesContainer>
-        </StyledNotes>
-    )
-}
+  return (
+    <StyledNotes>
+      <StyledNotesContainer>
+        <NotesContent />
+      </StyledNotesContainer>
+    </StyledNotes>
+  );
+};
 
-export default Notes
+export default Notes;
