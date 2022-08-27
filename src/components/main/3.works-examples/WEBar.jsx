@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useMemo} from "react";
 import styled, { css } from "styled-components";
 
 import { device } from "../../../common/constants/device";
@@ -38,13 +38,17 @@ const Button = styled.button`
 `;
 
 const WEBar = ({ items, isActive, setIsActive }) => {
+  const toggleButton = useMemo(() => {
+    return items.map((item) => (
+      <Button key={item} isActive={isActive === item} onClick={() => setIsActive(item)}>
+        {item}
+      </Button>
+    ))
+  }, [isActive]);
+
   return (
     <Bar>
-      {items.map((item) => (
-        <Button key={item} isActive={isActive === item} onClick={() => setIsActive(item)}>
-          {item}
-        </Button>
-      ))}
+      {toggleButton}
     </Bar>
   );
 };

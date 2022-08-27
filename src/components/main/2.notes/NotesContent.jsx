@@ -69,6 +69,7 @@ const NotesContent = () => {
     <Content>
       <Header subtitle={subtitle} title={title} />
       <NotesAccordion items={items} isActive={isActive} setIsActive={setIsActive} />
+      <NotesAccordion items={items} isActive={isActive} setIsActive={setIsActive} />
     </Content>
     <NotesImage />
     </>
