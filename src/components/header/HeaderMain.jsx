@@ -4,7 +4,7 @@ import styled from "styled-components";
 import HeaderLogo from "./HeaderLogo";
 import HeaderMenu from "./HeaderMenu";
 import Container from "../reusable/Container";
-import StyledButton from "../reusable/Button";
+import Button from "../reusable/Button";
 
 import { device } from "../../common/constants/device";
 
@@ -17,10 +17,11 @@ const StyledHeader = styled.header`
   color: var(--white);
 `;
 
-const StyledHeaderContainer = styled(Container)`
+const Content = styled(Container)`
   display: flex;
   padding-top: 30px;
   align-items: flex-end;
+  min-height: 0;
 
   @media ${device.tablet} {
     background: #ffffff;
@@ -30,16 +31,26 @@ const StyledHeaderContainer = styled(Container)`
   }
 `;
 
-function HeaderMain(props) {
+const HeaderBottom = styled(Button)`
+  border: 1px solid rgba(255, 255, 255, 0.295063);
+
+  @media ${device.tablet} {
+    display: none;
+  }
+`;
+
+function Header(props) {
   return (
     <StyledHeader {...props}>
-      <StyledHeaderContainer>
+      <Content>
         <HeaderLogo>RELAP</HeaderLogo>
         <HeaderMenu />
-        <StyledButton colorTransparent>Contact Us</StyledButton>
-      </StyledHeaderContainer>
+        <HeaderBottom link="true">
+          Contact Us
+        </HeaderBottom>
+      </Content>
     </StyledHeader>
   );
 }
 
-export default HeaderMain;
+export default Header;

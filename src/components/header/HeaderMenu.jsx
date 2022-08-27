@@ -8,7 +8,7 @@ const StyledHeaderMenu = styled.div`
   display: flex;
   justify-content: center;
   flex: 1 1 auto;
-  margin-bottom: 5px;
+  align-self: center;
 
   @media ${device.tablet} {
     justify-content: end;

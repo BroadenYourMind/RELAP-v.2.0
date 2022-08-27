@@ -5,20 +5,17 @@ import { device } from "../../../common/constants/device";
 
 const StyledNotesAccordion = styled.div`
   &:not(:last-child) {
-    margin-bottom: ${({ isActive }) => (isActive ? "40px" : "0")};
+    margin-bottom: ${({ isActive }) => (isActive ? "40px" : "24px")};
   }
 `;
 
 const Button = styled.button`
-  padding-bottom: ${({ isActive }) => (isActive ? "10px" : "26px")};
+  margin-bottom: ${({ isActive }) => (isActive ? "10px" : "0px")};
   text-decoration: ${({ isActive }) => (isActive ? "underline" : "none")};
 
   &:after {
-    content: ${({ isActive }) =>
-      isActive
-        ? "url(../img/notes/arr-up.svg)"
-        : "url(../img/notes/arr-down.svg)"};
-    padding-left: 8px;
+    content: ${({ isActive }) => `url(../img/notes/arr-${isActive ? "up" : "down"}.svg)`};
+    margin-left: 8px;
   }
 
   &:hover {
@@ -40,26 +37,19 @@ const Discription = styled.p`
 
 const NotesAccordion = ({ items, isActive, setIsActive }) => {
   return (
-    <>
+    <div>
       {items.map((item) => (
-        <StyledNotesAccordion isActive={isActive === item.value}>
+        <StyledNotesAccordion key={item.id} isActive={isActive === item.value}>
           <Button
             isActive={isActive === item.value}
-            onClick={() => [
-              isActive === item.value
-                ? setIsActive("")
-                : setIsActive(item.value),
-              console.log("Вперёд!"),
-            ]}
+            onClick={() => [isActive === item.value ? setIsActive("") : setIsActive(item.value)]}
           >
             {item.value}
           </Button>
-          <Discription isActive={isActive === item.value}>
-            {item.text}
-          </Discription>
+          <Discription isActive={isActive === item.value}>{item.text}</Discription>
         </StyledNotesAccordion>
       ))}
-    </>
+    </div>
   );
 };
 

@@ -8,12 +8,12 @@ import ExploreSocial from "./ExploreSocial.jsx";
 
 import { device } from "../../../common/constants/device";
 
-const StyledExplorer = styled.section`
+const Section = styled.section`
   background: var(--purple);
   overflow: hidden;
 `;
 
-const StyledExplorerContainer = styled(Container)`
+const ExplorerContainer = styled(Container)`
   padding-top: 143px;
   width: 100%;
   display: flex;
@@ -22,7 +22,7 @@ const StyledExplorerContainer = styled(Container)`
   max-height: 768px;
 
   @media ${device.tablet} {
-    padding-top: 64px;
+    padding-top: 87px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -32,13 +32,13 @@ const StyledExplorerContainer = styled(Container)`
 
 const Explorer = () => {
   return (
-    <StyledExplorer>
-      <StyledExplorerContainer>
+    <Section>
+      <ExplorerContainer>
         <ExploreContent />
         <ExploreImage />
         <ExploreSocial />
-      </StyledExplorerContainer>
-    </StyledExplorer>
+      </ExplorerContainer>
+    </Section>
   );
 };
 

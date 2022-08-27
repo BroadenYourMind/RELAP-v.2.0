@@ -5,67 +5,56 @@ import { device } from "../../../common/constants/device";
 
 import MenuBody from "./MenuBody";
 
-const StyledMenuIcon = styled.div`
+const Burger = styled.div`
   display: none;
 
   @media ${device.tablet} {
     justify-content: end;
 
-    padding-right: 10px;
     z-index: 5;
     display: block;
     position: relative;
     width: 30px;
-    height: 18px;
+    height: 20px;
     cursor: pointer;
 
     & span,
     &::before,
     &::after {
+      top: 50%;
       left: 0;
       position: absolute;
-      height: 12%;
+      height: 10%;
       width: 100%;
       transition: all 0.3s ease 0s;
       background: var(--purple);
     }
 
-    &::before,
-    &::after {
-      content: "";
+    span:nth-of-type(2) {
+      top: calc(50% - 6px);
     }
 
-    &::before {
-      top: 0;
-    }
-
-    &::after {
-      bottom: 0;
-    }
-
-    & span {
-      margin-top: -2.5%;
-      top: 50%;
-      transform: scale(1), translate(0px, -50%);
+    span:nth-of-type(3) {
+      top: calc(50% + 6px);
     }
   }
 `;
 
 function MenuIcon() {
   const items = [
-    { value: "Home", href: "" },
-    { value: "Features", href: "" },
-    { value: "Works", href: "" },
-    { value: "About", href: "" },
-    { value: "People", href: "" },
-    { value: "News", href: "" },
+    { id: 1, value: "Home", href: "" },
+    { id: 2, value: "Features", href: "" },
+    { id: 3, value: "Works", href: "" },
+    { id: 4, value: "About", href: "" },
+    { id: 5, value: "People", href: "" },
+    { id: 6, value: "News", href: "" },
   ];
 
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
-      <StyledMenuIcon
+      <Burger
         isOpen={isOpen}
         onClick={() => [
           setIsOpen(!isOpen),
@@ -73,8 +62,10 @@ function MenuIcon() {
         ]}
       >
         <span></span>
-      </StyledMenuIcon>
-      <MenuBody isOpen={isOpen} items={items} />
+        <span></span>
+        <span></span>
+      </Burger>
+      <MenuBody isOpen={isOpen} items={items}/>
     </>
   );
 }

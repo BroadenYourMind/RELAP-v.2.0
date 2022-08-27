@@ -1,27 +1,20 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import StyledButton from "../../reusable/Button";
 
+import Button from "../../reusable/Button";
 import Container from "../../reusable/Container";
 import WEBar from "./WEBar";
 import WEImages from "./WEImages";
-import WETopBlock from "./WETopBlock";
+import WETopContent from "./WETopContent";
 
-import { device } from "../../../common/constants/device";
-
-const StyledWorksExamples = styled.section`
+const Section = styled.section`
   background: #fdf2ff;
 `;
 
 const ButtonBlock = styled.div`
   display: flex;
   justify-content: center;
-  padding: 48px 0;
-
-  @media ${device.laptop} {
-    padding-top: 21px;
-    padding-bottom: 60px;
-  }
+  margin-bottom: 60px;
 `;
 
 const WorksExamples = () => {
@@ -36,16 +29,19 @@ const WorksExamples = () => {
 
   const images = [
     {
+      id: 1,
       src: "img/works-examples/31.png",
       title: "Exercitation",
       text: "Ullamco laboris",
     },
     {
+      id: 2,
       src: "img/works-examples/32.png",
       title: "Exercitation",
       text: "Ullamco laboris",
     },
     {
+      id: 3,
       src: "img/works-examples/33.png",
       title: "Exercitation",
       text: "Ullamco laboris",
@@ -53,16 +49,16 @@ const WorksExamples = () => {
   ];
 
   return (
-    <StyledWorksExamples>
+    <Section>
       <Container>
-        <WETopBlock />
-        <WEBar items={items} active={isActive} setActive={setIsActive} />
+        <WETopContent />
+        <WEBar items={items} isActive={isActive} setIsActive={setIsActive} />
         <WEImages images={images} />
         <ButtonBlock>
-          <StyledButton colorPurple>All works</StyledButton>
+          <Button btn="true" bg={"var(--purpleBtn)"}>All works</Button>
         </ButtonBlock>
       </Container>
-    </StyledWorksExamples>
+    </Section>
   );
 };
 

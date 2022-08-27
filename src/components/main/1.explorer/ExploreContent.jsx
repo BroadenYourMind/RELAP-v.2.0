@@ -1,10 +1,11 @@
-import { device } from "../../../common/constants/device";
 import React from "react";
 import styled from "styled-components";
-import StyledButton from "../../reusable/Button";
 
-const StyledExploreContent = styled.div`
-  padding: 85px 0 192px 0;
+import { device } from "../../../common/constants/device";
+import Button from "../../reusable/Button";
+
+const Content = styled.div`
+  padding-top: 85px;
   max-width: 360px;
   color: var(--white);
 
@@ -14,8 +15,8 @@ const StyledExploreContent = styled.div`
     align-items: center;
     text-align: center;
     min-width: 100%;
-    padding-top: 23px;
-    padding-bottom: 19px;
+    padding-top: 0;
+    margin-bottom: 19px;
   }
 
   @media ${device.mobile} {
@@ -24,21 +25,26 @@ const StyledExploreContent = styled.div`
   }
 `;
 
+const Title = styled.h1`
+  margin-bottom: 26px;
+`;
+
 const Desctiption = styled.p`
-  padding: 26px 0 34px 0;
+  margin-bottom: 34px;
 `;
 
 const ExploreContent = (props) => {
   return (
-    <StyledExploreContent {...props}>
-      <h1>Omnis Voluptas</h1>
+    <Content {...props}>
+      <Title>Omnis Voluptas</Title>
       <Desctiption>
-        Temporibus autem quibusdam et aut officiis debitis aut rerum
-        necessitatibus saepe eveniet ut et voluptates repudiandae sint et
-        molestiae non recusandae.
+        Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates
+        repudiandae sint et molestiae non recusandae.
       </Desctiption>
-      <StyledButton colorYellow>Explore</StyledButton>
-    </StyledExploreContent>
+      <Button link="true" bg={"var(--yellowBtn)"}>
+        Explore
+      </Button>
+    </Content>
   );
 };
 

@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import { device } from "../../../common/constants/device";
 
-const StyledExploreSocial = styled.div`
+const SocialLogo = styled.div`
   display: flex;
   width: 112px;
   justify-content: space-between;
@@ -21,7 +21,7 @@ const StyledExploreSocial = styled.div`
 
 const ExploreSocial = () => {
   return (
-    <StyledExploreSocial>
+    <SocialLogo>
       <a href="https://www.facebook.com/">
         <img src="img/explore/FB.svg" alt="FaceBook logo" />
       </a>
@@ -31,7 +31,7 @@ const ExploreSocial = () => {
       <a href="https://www.instagram.com/">
         <img src="img/explore/Ist.svg" alt="Instagram logo" />
       </a>
-    </StyledExploreSocial>
+    </SocialLogo>
   );
 };
 

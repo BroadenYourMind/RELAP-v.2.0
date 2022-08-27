@@ -33,13 +33,13 @@ const Image = styled.img`
   }
 `;
 
-const Decor = styled.div`
+const DecorItem = styled.div`
   position: absolute;
   content: "";
   background: var(--purple);
   border-radius: 50%;
 
-  &:nth-child(1) {
+  &:nth-child(2) {
     bottom: -53px;
     left: -49px;
     width: 100px;
@@ -53,21 +53,21 @@ const Decor = styled.div`
     }
   }
 
-  &:nth-child(2) {
+  &:nth-child(3) {
     bottom: -133px;
     right: -268px;
     width: 396px;
     height: 396px;
   }
 
-  &:nth-child(3) {
+  &:nth-child(4) {
     top: 37px;
     right: 2px;
     width: 156px;
     height: 156px;
   }
 
-  &:nth-child(4) {
+  &:nth-child(5) {
     top: -90px;
     right: -184px;
     width: 78px;
@@ -79,10 +79,10 @@ const ExploreImage = () => {
   return (
     <StyledExploreImage>
       <Image src="img/explore/illustration.svg" alt="Стол с ноутбуком" />
-      <Decor />
-      <Decor />
-      <Decor />
-      <Decor />
+      <DecorItem />
+      <DecorItem />
+      <DecorItem />
+      <DecorItem />
     </StyledExploreImage>
   );
 };

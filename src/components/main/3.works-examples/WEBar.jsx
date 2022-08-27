@@ -3,14 +3,10 @@ import styled, { css } from "styled-components";
 
 import { device } from "../../../common/constants/device";
 
-const StyledWEBar = styled.div`
+const Bar = styled.div`
   display: flex;
   flex-wrap: wrap;
-  padding-bottom: 41px;
-
-  @media ${device.laptop} {
-    padding-top: 46px;
-  }
+  margin-bottom: 44px;
 
   @media ${device.tablet} {
     justify-content: center;
@@ -21,8 +17,10 @@ const StyledWEBar = styled.div`
     justify-content: start;
   }
 `;
-const StyledBarButton = styled.button`
-  padding-right: 31px;
+const Button = styled.button`
+  &:not(:last-child) {
+    margin-right: 31px;
+  }
 
   @media ${device.tablet} {
     padding-bottom: 24px;
@@ -33,24 +31,21 @@ const StyledBarButton = styled.button`
     cursor: pointer;
   }
 
-  ${({ isToggle }) => css`
-    font-weight: ${isToggle ? "600" : "400"};
-    opacity: ${isToggle ? "1" : "0.5"};
+  ${({ isActive }) => css`
+    font-weight: ${isActive ? "600" : "400"};
+    opacity: ${isActive ? "1" : "0.5"};
   `};
 `;
 
 const WEBar = ({ items, isActive, setIsActive }) => {
   return (
-    <StyledWEBar>
+    <Bar>
       {items.map((item) => (
-        <StyledBarButton
-          isToggle={isActive === item}
-          onClick={() => setIsActive(item)}
-        >
+        <Button key={item} isActive={isActive === item} onClick={() => setIsActive(item)}>
           {item}
-        </StyledBarButton>
+        </Button>
       ))}
-    </StyledWEBar>
+    </Bar>
   );
 };
 

@@ -3,14 +3,19 @@ import styled from "styled-components";
 
 import { device } from "../../../common/constants/device";
 
-const StyledWEImages = styled.div`
+const ImagesBlock = styled.div`
   display: flex;
   justify-content: space-between;
+  margin-bottom: 48px;
 
   @media ${device.laptop} {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+  }
+
+  @media ${device.tablet} {
+    margin-bottom: 46px;
   }
 `;
 
@@ -42,11 +47,15 @@ const Item = styled.div`
   }
 
   @media ${device.laptop} {
-    margin-bottom: 30px;
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
   }
 
   @media ${device.mobile} {
-    margin-bottom: 17px;
+    &:not(:last-child) {
+      margin-bottom: 17px;
+    }
   }
 `;
 
@@ -85,9 +94,9 @@ const Text = styled.p`
 
 const WEImages = ({ images }) => {
   return (
-    <StyledWEImages>
+    <ImagesBlock>
       {images.map((image) => (
-        <Item>
+        <Item key={image.id}>
           <Image src={image.src} alt="Variation of work" />
           <TextBlock>
             <Title>{image.title}</Title>
@@ -95,7 +104,7 @@ const WEImages = ({ images }) => {
           </TextBlock>
         </Item>
       ))}
-    </StyledWEImages>
+    </ImagesBlock>
   );
 };
 

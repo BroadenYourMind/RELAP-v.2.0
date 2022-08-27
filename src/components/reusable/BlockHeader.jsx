@@ -46,7 +46,7 @@ const Text = styled.p`
 const BlockHeader = (props) => {
   return (
     <StyledBlockHeader {...props}>
-      <Text>{props.text}</Text>
+      <Text>{props.subtitle}</Text>
       <h2>{props.title}</h2>
     </StyledBlockHeader>
   );

@@ -1,8 +1,15 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
-import { device } from "../../common/constants/device";
+const BtnType = (props) => {
+    if (props.btn) {
+      return <button {...props}>{props.children}</button>;
+    }
+    if (props.link) {
+      return <a href={props.href} {...props}>{props.children}</a>;
+    }
+};
 
-const StyledButton = styled.a`
+const Button = styled(BtnType)`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -11,6 +18,7 @@ const StyledButton = styled.a`
   border-radius: 24px;
   font-weight: 700;
   color: var(--white);
+  background: ${props => props.bg || "transparent"};
 
   &:hover {
     cursor: pointer;
@@ -18,29 +26,6 @@ const StyledButton = styled.a`
     color: #dadada;
     transition: all 0.5s ease;
   }
-
-  ${(props) =>
-    props.colorYellow &&
-    css`
-      background: #ffc300;
-    `}
-
-  ${(props) =>
-    props.colorPurple &&
-    css`
-      background: #c86dd7;
-    `}
-    
-
-    ${(props) =>
-    props.colorTransparent &&
-    css`
-      border: 1px solid rgba(255, 255, 255, 0.295063);
-
-      @media ${device.tablet} {
-        display: none;
-      }
-    `}
 `;
 
-export default StyledButton;
+export default Button;

@@ -10,7 +10,7 @@ const StyledNotes = styled.section`
   background: #f2f2f2;
 `;
 
-const StyledNotesContainer = styled(Container)`
+const NotesContainer = styled(Container)`
   min-height: 768px;
   position: relative;
 
@@ -29,9 +29,9 @@ const StyledNotesContainer = styled(Container)`
 const Notes = () => {
   return (
     <StyledNotes>
-      <StyledNotesContainer>
+      <NotesContainer>
         <NotesContent />
-      </StyledNotesContainer>
+      </NotesContainer>
     </StyledNotes>
   );
 };

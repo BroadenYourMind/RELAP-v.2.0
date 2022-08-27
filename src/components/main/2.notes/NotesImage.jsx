@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import { device } from "../../../common/constants/device";
 
-const StyledNotesImage = styled.div`
+const ImagesBlock = styled.div`
   position: absolute;
   width: 672px;
   height: 544px;
@@ -110,11 +110,11 @@ const Image = styled.img`
 
 const NotesImage = () => {
   return (
-    <StyledNotesImage>
+    <ImagesBlock>
       <Image src="/img/notes/Bitmap.png" alt="Painting with paints" />
       <Image src="/img/notes/Oval.svg" alt="White Oval" />
       <Image src="/img/notes/Triangle.svg" alt="Purple Triangle" />
-    </StyledNotesImage>
+    </ImagesBlock>
   );
 };
 

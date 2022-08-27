@@ -1,16 +1,16 @@
 import React from "react";
 import styled from "styled-components";
-import BlockHeader from "../../reusable/BlockHeader";
 
+import BlockHeader from "../../reusable/BlockHeader";
 import { device } from "../../../common/constants/device";
 
-const StyledTopBlock = styled.div`
+const TopContent = styled.div`
   display: flex;
   justify-content: space-between;
-  margin-bottom: 55px;
+  margin-bottom: 56px;
 
   @media ${device.laptop} {
-    margin-bottom: 0px;
+    margin-bottom: 46px;
   }
 
   @media ${device.tablet} {
@@ -41,13 +41,13 @@ const Text = styled.div`
   }
 `;
 
-const WETopBlock = () => {
+const WETopContent = () => {
   const title = "Ullam corporis suscipit";
-  const text = "Nisi ut aliquid";
+  const subtitle = "Nisi ut aliquid";
 
   return (
-    <StyledTopBlock>
-      <BlockHeader worksExampleHeader text={text} title={title}></BlockHeader>
+    <TopContent>
+      <BlockHeader worksExampleHeader subtitle={subtitle} title={title}></BlockHeader>
       <Text>
         Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
         fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem
@@ -55,8 +55,8 @@ const WETopBlock = () => {
         sit amet, consectetur, adipisci velit, sed quia non numquam eius modi
         tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.
       </Text>
-    </StyledTopBlock>
+    </TopContent>
   );
 };
 
-export default WETopBlock;
+export default WETopContent;
